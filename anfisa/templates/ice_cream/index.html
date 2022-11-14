@@ -1,9 +1,25 @@
-anfisa
-├── anfisa/     #  Главная папка проекта
-├── ice_cream/  #  Папка приложения
-├── templates  <-- Директория для шаблонов
-│    └── ice_cream
-│        ├── ice_cream_detail.html # Шаблон подробной информации о мороженом
-│        ├── ice_cream_list.html   # Шаблон списка мороженого
-│        └── index.html            # Шаблон главной страницы
-└──  manage.py
+<!-- templates/ice_cream/index.html -->
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+</head>
+
+<body>
+  <header>
+    <!-- Это тег шаблонизатора include, сюда будет включён код
+      из файла includes/header.html -->
+    {% include 'includes/header.html' %}
+  </header>
+  <main>
+    {% block content %}
+    Информация на главной странице
+    {% endblock %}
+  </main>
+  <footer>
+    {% include 'includes/footer.html' %}
+  </footer>
+</body>
+
+</html>
