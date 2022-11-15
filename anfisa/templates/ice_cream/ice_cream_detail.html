@@ -1,9 +1,31 @@
 {% comment %} anfisa
-├── anfisa/     #  Главная папка проекта
-├── ice_cream/  #  Папка приложения
-├── templates  <-- Директория для шаблонов
-│    └── ice_cream
-│        ├── ice_cream_detail.html # Шаблон подробной информации о мороженом
-│        ├── ice_cream_list.html   # Шаблон списка мороженого
-│        └── index.html            # Шаблон главной страницы
-└──  manage.py {% endcomment %}
+├── anfisa/ # Главная папка проекта
+├── ice_cream/ # Папка приложения
+├── templates <-- Директория для шаблонов │ └── ice_cream │ ├── ice_cream_detail.html # Шаблон подробной информации о
+    мороженом │ ├── ice_cream_list.html # Шаблон списка мороженого │ └── index.html # Шаблон главной страницы └──
+    manage.py {% endcomment %} {% extends 'base.html' %} <!DOCTYPE html>
+    <html lang="ru">
+
+    <head>
+    </head>
+
+    <body>
+        <header>
+            {% include 'includes/header.html' %}
+        </header>
+        <main>
+            {% block content %}
+            Список мороженого быть тут должен
+            <a href="{% url 'ice_cream:' %}">Главная</a>
+            {% endblock %}
+        </main>
+        <footer>
+            {% include 'includes/footer.html' %}
+        </footer>
+    </body>
+
+    </html>
+    {% comment %} {% block content %}
+    Список мороженого быть тут должен
+    <a href="{% url 'ice_cream:index' %}">Главная</a>
+    {% endblock %} {% endcomment %}

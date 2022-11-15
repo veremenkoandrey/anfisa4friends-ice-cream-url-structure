@@ -15,7 +15,18 @@
   <main>
     {% block content %}
     Информация на главной странице
-    {% endblock %}
+    {% comment %}
+    В HTML-тег <a> в атрибут href вместо адреса ссылки вставляем тег {% url %}
+      и указываем name нужного path()
+      {% endcomment %}
+      <a class="navbar-brand" href="{% url 'ice_cream:ice_cream_list' %}">
+        Страница со списком сортов мороженого
+      </a>
+
+      {% comment %} <a href="{% url 'ice_cream:ice_cream_detail' ice_cream.pk %}">
+        Подробная информация
+      </a> {% endcomment %}
+      {% endblock %}
   </main>
   <footer>
     {% include 'includes/footer.html' %}
